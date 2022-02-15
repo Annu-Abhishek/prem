@@ -47,8 +47,19 @@
 
 // const neither  reinitialize nor redeclare
 
-const a=4;
-console.log(a);
-a=6;
-console.log(a);
+// const a=4;
+// console.log(a);
+// a=6;
+// console.log(a);
 // clear h cannot even redeclare
+
+let j=20;
+for(var i=1;i<=10;i++){
+    let j=200;
+}
+console.log(j);
+console.log("inner" +j);
+
+var b;
+b=200;
+console.log(b);
