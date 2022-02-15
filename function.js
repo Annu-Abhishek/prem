@@ -40,3 +40,4 @@ let additionIIFE= (function add(a,b){
     return a+b;
 }) (30,40);
 console.log(additionIIFE);
+console.log(additionIIFE (30,40));
