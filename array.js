@@ -44,6 +44,13 @@ let array2d = [
     [4,5,6],
     [7,8,9]
 ];
-console.log(array2d);
+// console.log(array2d);
+// console.table(array2d);
+// console.log(array2d[1][2]);
+// let res=array2d[1];
+// console.log(res);
+// console.log(res[2]);
+console.log(array2d.length);      /*how many rows in this array2d*/
+console.log(array2d[1].length);    /*how many elements in this row*/
+array2d[1][1]=false;
 console.table(array2d);
-console.log(array2d[1][2]);
