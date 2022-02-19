@@ -29,3 +29,41 @@ let ans=str.substr(2,6);
 console.log(ans);                     /* index 2 s suru hogi aur next 6 index print hogi*/
 
 
+// replacing to A NEW STRING
+str="YOLO";
+console.log(str);
+
+// upper and lower cases
+console.log(str.toLowerCase());
+
+str="fomo";
+console.log(str.toUpperCase());
+
+
+// concatenation method
+// ..................2 string ko jod k ek bnata h bich m koi space  nhi
+let FirstStr="believe ";
+let SecondStr="in yourself";
+let concatenatedStr=FirstStr + SecondStr ;
+console.log(concatenatedStr);
+
+// concat method....
+// .................agr 2 string k alwa v kuchh jodna h ...3rd string m 
+
+let concatStr = FirstStr.concat(SecondStr, " and me");
+console.log(concatStr);
+
+// trim method
+// ............ye string k start and end k whitespaces (aise hi decoration k liye jo space dete hn) ko remove krta h
+var str ="                           hello      how are you                        ";
+console.log(str.length);    /* string ka length 50+ hoga*/
+
+console.log(str.trim());             /*white spaces (yani start or end k spaces )ko cut kr diya*/
+console.log(str.trim().length);        /*ab keval hello     how are you ka length bta rha h*/
+
+
+// NOTE.... string in JavaScript are immutable
+//  WHILE in java string are mutable................mtlb string k characters ko change nhi kr sakte javascript m example niche h
+var str="welcome";
+str[4]="z";
+console.log(str);           /*java m 4th index p z aaya hota pr javascript m welcome ka welcome hi rh gya */
