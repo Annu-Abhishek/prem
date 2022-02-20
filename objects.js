@@ -48,3 +48,21 @@ console.log(CaptainAmerica.friends[0]);                /* dot notation*/
 console.log(CaptainAmerica["friends"][0]);             /* same thing  square bracket notation */
 
 CaptainAmerica.sayHi();                             /* object k andr wala function ko call */
+
+
+//  for loop in objects
+
+//  in        keyword is used to gets keys in an object
+for (let xyz in CaptainAmerica){
+    console.log(xyz);               /* is s keys print hoga*/
+
+    console.log(CaptainAmerica[xyz]);           /* is s key ka value print hoga */
+}
+
+for(let abc in CaptainAmerica){
+console.log(`${abc}: ${CaptainAmerica[abc]}`)                /* ek line m hi print krna h sara to backtick use kro*/
+}
+
+
+
+
