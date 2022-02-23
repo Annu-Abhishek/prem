@@ -53,13 +53,15 @@
 // console.log(a);
 // clear h cannot even redeclare
 
-let j=20;
-for(var i=1;i<=10;i++){
-    let j=200;
-}
-console.log(j);
-console.log("inner" +j);
+// let j=20;
+// for(var i=1;i<=10;i++){
+//     let j=200;
+// }
+// console.log(j);
+// console.log("inner" +j);
 
-var b;
-b=200;
-console.log(b);
+// var b;
+// b=200;
+// console.log(b);
+
+
