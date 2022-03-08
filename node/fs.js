@@ -15,8 +15,8 @@ const fs=require("fs");
 // console.log(data);
 
 
-//const abc= require("./f1.txt");       /* 1 dot ka mtlb isi folder m jo f1.txt wo chahiye */
+//const fs = require("./f1.txt");       /* 1 dot ka mtlb isi folder m jo f1.txt wo chahiye */
 // console.log(abc);
 
-const def = require("../JS/array.js");
-console.log(def);
+const abc = require("../JS/temp.js");
+console.log(abc);
