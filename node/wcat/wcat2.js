@@ -8,7 +8,7 @@ const fs = require("fs");
 // let input = process.argv;
 // console.log(input);
 let inputArr = process.argv.slice(2);
-console.log(inputArr);
+// console.log(inputArr);
 let filesArr = [];
 let optionsArr = [];
 //===============> placed files path in filesArr <=============
@@ -40,11 +40,11 @@ for (let i = 0; i < filesArr.length; i++){
     content = content + fileContent + "\r\n";           /* for mac \n for windows \r\n  ...or ye command isliye h takki ek file k bad dusre file k content aaye to uss chipke nhi*/ 
                      
 }
-console.log(content);
+// console.log(content);
 
 let contentArr = content.split("\r\n");             /* for windows \r\n */
-console.log(contentArr); 
-console.table(contentArr);
+// console.log(contentArr); 
+// console.table(contentArr);
 
 //check if -s is present or not
 let tempArr = [];
