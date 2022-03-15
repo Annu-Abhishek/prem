@@ -37,7 +37,7 @@ for (let i = 0; i < filesArr.length; i++){
 let content = "";
 for (let i = 0; i < filesArr.length; i++){
     let fileContent = fs.readFileSync(filesArr[i]);
-    content = content + fileContent + "\r\n";
+    content = content + fileContent + "\r\n";           /* for mac \n for windows \r\n  ...or ye command isliye h takki ek file k bad dusre file k content aaye to uss chipke nhi*/ 
                      
 }
 console.log(content);
@@ -68,5 +68,48 @@ if (isSPresent) {
      }
      console.log("data after removing extra lines\n",tempArr);
 }
+
+contentArr=tempArr;
 // .....(-s)implement ho gya---terminal m (node wcat2.js -s f3.txt)...ye type kro
 // ......aor v file ka dekhna h to ---terminal m... (node wcat2.js -s f1.txt f2.txt f3.txt)..ye type kro
+
+// ---------ab -n , -b  ko implement krna h--------
+let indexOFN = optionsArr.indexOf("-n");
+let indexOFB = optionsArr.indexOf("-b");
+
+// if -n or -b is not found, -1 is returned
+
+if(indexOfN ! = -1 &&  indexOfB ! = -1){
+    if(indexOfN < indexOfB){
+        finalOption ="-n";
+    }
+    else{
+        finalOPtion = "-b";
+    }
+}
+
+// either -n is present or -b is present
+else {
+    if (indexOfN ! =-1){
+        finalOption = "-n";
+    }
+    else if (indexOfB ! =-1){
+        finalOption= "-b"
+    }
+}
+//  calling of option by  evaluting finalOption
+if(finalOption == "-n"){
+    modifiycontentByN();
+}
+else if (finalOption == "-b"){
+    modifiyContentByB();
+}
+function modifiyContentByN() {
+
+}
+function modifiyContentByB() {
+    
+}
+
+
+
