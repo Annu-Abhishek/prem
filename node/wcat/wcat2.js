@@ -105,10 +105,19 @@ else if (finalOption == "-b"){
     modifiyContentByB();
 }
 function modifiyContentByN() {
-
+for(let i=0;i<contentArr.length;i++){
+    contentArr[i]=(i +1) + ")" +contentArr[i];
+}
 }
 function modifiyContentByB() {
-    
+    let count =1;
+    for(let i=0;i<contentArr.length;i++){
+
+        if(contentArr[i] ! =""){
+            contentArr[i]=count +")" + countArr[i];
+            count ++;
+        }
+    }   
 }
 
 
