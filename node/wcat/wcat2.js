@@ -58,7 +58,7 @@ if (isSPresent) {
             contentArr[i] = null;
         }
     }
-    console.table(contentArr);
+    // console.table(contentArr);
    
     // //push everything in tempArr except null
      for (let i = 0; i < contentArr.length; i++){
@@ -66,7 +66,7 @@ if (isSPresent) {
              tempArr.push(contentArr[i]);
        }
      }
-     console.log("data after removing extra lines\n",tempArr);
+    //  console.log("data after removing extra lines\n",tempArr);
 }
 
 contentArr=tempArr;
@@ -74,32 +74,34 @@ contentArr=tempArr;
 // ......aor v file ka dekhna h to ---terminal m... (node wcat2.js -s f1.txt f2.txt f3.txt)..ye type kro
 
 // ---------ab -n , -b  ko implement krna h--------
-let indexOFN = optionsArr.indexOf("-n");
-let indexOFB = optionsArr.indexOf("-b");
+let indexOfN = optionsArr.indexOf("-n");
+let indexOfB = optionsArr.indexOf("-b");
+
+let finalOption ="";
 
 // if -n or -b is not found, -1 is returned
 
-if(indexOfN ! = -1 &&  indexOfB ! = -1){
+if(indexOfN != -1 &&  indexOfB != -1){
     if(indexOfN < indexOfB){
         finalOption ="-n";
     }
     else{
-        finalOPtion = "-b";
+        finalOption = "-b";
     }
 }
 
 // either -n is present or -b is present
 else {
-    if (indexOfN ! =-1){
+    if (indexOfN != -1){
         finalOption = "-n";
     }
-    else if (indexOfB ! =-1){
-        finalOption= "-b"
+    else if (indexOfB != -1){
+        finalOption= "-b";
     }
 }
 //  calling of option by  evaluting finalOption
 if(finalOption == "-n"){
-    modifiycontentByN();
+    modifiyContentByN();
 }
 else if (finalOption == "-b"){
     modifiyContentByB();
@@ -113,12 +115,12 @@ function modifiyContentByB() {
     let count =1;
     for(let i=0;i<contentArr.length;i++){
 
-        if(contentArr[i] ! =""){
-            contentArr[i]=count +")" + countArr[i];
+        if(contentArr[i] !=""){
+            contentArr[i]=count +")" + contentArr[i];
             count ++;
         }
     }   
 }
 
-
+console.log(contentArr);
 
