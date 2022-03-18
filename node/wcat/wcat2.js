@@ -67,9 +67,10 @@ if (isSPresent) {
        }
      }
     //  console.log("data after removing extra lines\n",tempArr);
+    contentArr=tempArr;
 }
 
-contentArr=tempArr;
+
 // .....(-s)implement ho gya---terminal m (node wcat2.js -s f3.txt)...ye type kro
 // ......aor v file ka dekhna h to ---terminal m... (node wcat2.js -s f1.txt f2.txt f3.txt)..ye type kro
 
