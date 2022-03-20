@@ -1,6 +1,7 @@
 //  Entry point of my commandline
 
 let helpFunc = require("./command/help");
+let orgFunc = require ("./command/organize");
 // console.log(helpFunc.help());
 let inputArr = process.argv.slice(2);
 let command = inputArr[0];
@@ -12,7 +13,8 @@ switch (command) {
         break;
     case "organize" :
         // call organise function
-        console.log("organise function called and excuted successfully on path" + path);
+        orgFunc.organize(path);
+        // console.log("organise function called and excuted successfully on path" + path);
         break;
     case "help" :
             // call help function

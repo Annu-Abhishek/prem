@@ -64,7 +64,7 @@ function getFolderName(ext) {
         }
     }
   }
-//   return folder name
+ return "miscellaneous";
 }
 
 function copyFileToDest(srcPath,fullPathOfFile, folderName) {
@@ -85,5 +85,8 @@ function copyFileToDest(srcPath,fullPathOfFile, folderName) {
 }
 
 
-let srcPath ;
-organize(srcPath);
+// let srcPath ;
+// organize(srcPath);
+module.exports = {
+    organize : organize
+}
