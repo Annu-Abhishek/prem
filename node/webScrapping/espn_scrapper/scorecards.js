@@ -27,6 +27,14 @@ function getMatchDetails(html) {
     let venueOfMatch = descArr[1];
     console.log(dateOfMatch);
     console.log(venueOfMatch);
+
+    // 3. get result
+    let matchResEle = selecTool(
+        ".match-info.match-info-MATCH.match-info-MATCH-half-width>.status-text"
+    );
+    console.log(matchResEle.text());
+// 4. get team names
+
 }
 module.exports = {
     gifs :getInfoFromScorecard
