@@ -32,10 +32,20 @@ function getMatchDetails(html) {
     let matchResEle = selecTool(
         ".match-info.match-info-MATCH.match-info-MATCH-half-width>.status-text"
     );
-    console.log(matchResEle.text());
+     console.log(matchResEle.text());
 // 4. get team names
+    let teamNamesArr = selecTool(".name-detail>.name-link") ;   
+    // console.log(teamNames.text());
+    let ownTeam = selecTool(teamNamesArr[0]).text();
+    let opponentTeam = selecTool(teamNamesArr[1]).text(); 
+    console.log(ownTeam);
+    console.log(opponentTeam);   
 
+    // 5. get innings
+    let allBatsmenTable = selecTool(".table.batsman tbody>tr");
+    console.log(allBatsmenTable.text());
 }
+// visit every scorecard and get info
 module.exports = {
     gifs :getInfoFromScorecard
 }
