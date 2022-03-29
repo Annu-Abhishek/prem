@@ -83,6 +83,14 @@ function getMatchDetails(html) {
                 // count++;
                 //  console.log("inside" + count);
                 // name | runs |balls| 4's | 6's | sr
+
+                // for(let i=0; i<8; i++) {
+                //     if(i==1 || i==4) continue;                      // 1st way to print all data using for loop
+                //     else {
+                //         console.log(selecTool(row.find("td")[i]).text());
+                //     }
+                // }
+                
             }
         }
     }
