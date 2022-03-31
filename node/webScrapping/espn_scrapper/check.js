@@ -3,7 +3,6 @@ const cheerio = require("cheerio");
 const fs = require("fs");
 const path =require("path");
 const xlsx = require("xlsx");
-const { Console } = require("console");
 
 function getInfoFromScorecard (url) {
     // we have a url of a scorecard, we want to get html of that scorecard
@@ -13,10 +12,7 @@ function getInfoFromScorecard (url) {
 function cb(err,res,body){
     if (err) {
         console.log(err);
-    } else if  (res.statusCode==404){
-        console.log("page not found");
-    }
-    else {
+    } else {
         getMatchDetails(body);
     }
 }
@@ -25,7 +21,7 @@ function getMatchDetails(html) {
     let selecTool = cheerio.load(html);
     // 1. get venue
     // 2.get date
-    let desc = selecTool(".match-header-info.match-info-MATCH");
+    let desc = selecTool(".match-header-info.match-info-MATCH")
     // console.log(desc.text());
     // resultFinal (N), Dubai (DSC), Nov 10 2020, Indian Premier League
 
@@ -46,8 +42,8 @@ function getMatchDetails(html) {
     // console.log(teamNames.text());
     let ownTeam = selecTool(teamNamesArr[0]).text();
     let opponentTeam = selecTool(teamNamesArr[1]).text(); 
-    // console.log(ownTeam);
-    // console.log(opponentTeam);   
+    console.log(ownTeam);
+    console.log(opponentTeam);   
 
     // 5. get innings
     let allBatsmenTable = selecTool(".table.batsman tbody");
@@ -56,10 +52,10 @@ function getMatchDetails(html) {
                             //  note hmare pass batsaman ki table 2 h ek DC or other MI
     
     // console.log(allBatsmenTable.text());
-    // let htmlString =""; 
-    // let count = 0 ;   
+    let htmlString =""; 
+    let count = 0 ;   
     for(let i=0; i<allBatsmenTable.length; i++){
-        // htmlString += selecTool(allBatsmenTable[i]).html();     // hmne dono table k html ko add krk bdi html bnai
+        htmlString += selecTool(allBatsmenTable[i]).html();     // hmne dono table k html ko add krk bdi html bnai
        
         // get the descendants(table columns) of each element (table rows)
         // let allcolms = selecTool(allBatsmenTable[i]).find("td");
@@ -72,14 +68,7 @@ function getMatchDetails(html) {
 //     console.log(htmlString);                // bdi html  ko print krwa diya isko copy krk ek inning.html file m table tag m wrap krk live server kra diya
 // }
         let allRows = selecTool(allBatsmenTable[i]).find("tr");   //table m jitne v tr the sb selected =32 
-            // let temp ;
-            if (i==1){
-                let temp = ownTeam;
-                ownTeam = opponentTeam;
-                opponentTeam = temp;
-            }
-            console.log(ownTeam);
-            console.log(opponentTeam);
+
         for (let i = 0; i< allRows.length; i++){              // 32 times loop chlega
             // check to see if any of the matched elements havce the given className
 
@@ -105,19 +94,8 @@ function getMatchDetails(html) {
                 //         console.log(selecTool(row.find("td")[i]).text());
                 //     }
                 // }
-                let pn = selecTool(row.find("td")[0]).text().split("");
-                // console.log(pn);
-                // console.log(pn.join(""));
-                let playerName = "";
-                if(pn.includes("(")){
-                    
-                    playerName = pn.join("").split("(")[0];
-                } else if  (pn.includes("†")) {
-                    playerName = pn.join("").split("†")[0];
-                } 
-                else{
-                    playerName= pn.join("");
-                }
+                let playerName = selecTool(row.find("td")[0]).text().trim();
+                // console.log(playerName);
                 let runs = selecTool(row.find("td")[2]).text();
                 let balls = selecTool(row.find("td")[3]).text();
                 let numberOf4 = selecTool(row.find("td")[5]).text();
@@ -142,7 +120,7 @@ function getMatchDetails(html) {
                     numberOf6,
                     sr
                     );
-                   console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"); 
+                    
                }
             }
         }

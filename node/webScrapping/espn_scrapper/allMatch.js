@@ -37,7 +37,7 @@ for(let i=0; i<scorecardElemArr.length; i++){
     //  getScorecardObj.gifs(fullLink);             // same chiz ka dusra tarika niche wala line m h
     gifs(fullLink);
     
-    break;
+    //  break;
   }
 }
 
